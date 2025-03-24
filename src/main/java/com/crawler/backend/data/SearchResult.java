@@ -34,4 +34,3 @@ public class SearchResult {
         return urls;
     }
 }
-
