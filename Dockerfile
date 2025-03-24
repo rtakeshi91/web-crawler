@@ -1,11 +1,6 @@
 FROM maven:3.6.3-jdk-14
 
-WORKDIR /usr/src/axreng
-
-COPY . .
-
-RUN mvn clean package
-
+ADD . /usr/src/crawler
+WORKDIR /usr/src/crawler
 EXPOSE 4567
-
-CMD ["java", "-jar", "target/crawler-axreng.jar"]
+ENTRYPOINT ["mvn", "clean", "verify", "exec:java"]

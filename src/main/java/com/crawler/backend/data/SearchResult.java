@@ -1,4 +1,4 @@
-package com.axreng.backend.data;
+package com.crawler.backend.data;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,10 +1,10 @@
-package com.axreng.backend;
+package com.crawler.backend;
 
 import static spark.Spark.*;
 
-import com.axreng.backend.data.RequestData;
-import com.axreng.backend.data.ResponseId;
-import com.axreng.backend.data.SearchResult;
+import com.crawler.backend.data.RequestData;
+import com.crawler.backend.data.ResponseId;
+import com.crawler.backend.data.SearchResult;
 
 import com.google.gson.Gson;
 
@@ -15,7 +15,9 @@ import java.util.UUID;
 
 public class CrawlerAPI {
     static final ConcurrentHashMap<String, SearchResult> searches = new ConcurrentHashMap<>();
-    private static final ExecutorService executor = Executors.newFixedThreadPool(5);
+    private static final ExecutorService executor = Executors.newFixedThreadPool(
+            Integer.parseInt(System.getenv().getOrDefault("THREAD_POOL_SIZE", "10"))
+    );
     private static final Gson gson = new Gson();
 
     public static void main(String[] args) {

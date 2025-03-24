@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: WebCrawlerTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.613 s <<< FAILURE! - in WebCrawlerTest
-testCrawl_ShouldFindKeywordInMockPage  Time elapsed: 0.19 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: A URL deveria ser encontrada! ==> expected: <false> but was: <true>
-	at WebCrawlerTest.testCrawl_ShouldFindKeywordInMockPage(WebCrawlerTest.java:20)
-
